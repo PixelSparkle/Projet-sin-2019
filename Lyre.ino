@@ -23,11 +23,11 @@ AndeeHelper button;
 void setup()
 {
   // initialisation interface bluetooth
-  Andee.begin();  // Début connexion entre l'arduino et l'annikken andee
-  Andee.clear();  // Nettoyage de l'écran au cas ou si il y a une ancienne session qui s'est mal étteinte 
+  Andee.begin();  // DÃ©but connexion entre l'arduino et l'annikken andee
+  Andee.clear();  // Nettoyage de l'Ã©cran au cas ou si il y a une ancienne session qui s'est mal Ã©tteinte 
   setInitialData(); // Definition des type et des apparence des objets 
-  DmxSimple.usePin(4); // Définition du pin d'utilisation pour le DMX Shield
-  DmxSimple.maxChannel(6); // Définition des channels maximum supportés par la lyre
+  DmxSimple.usePin(4); // DÃ©finition du pin d'utilisation pour le DMX Shield
+  DmxSimple.maxChannel(6); // DÃ©finition des channels maximum supportÃ©s par la lyre
 }
 
 void setInitialData() 
@@ -41,7 +41,7 @@ void setInitialData()
   *       40-50: Specials
   *       
   * ID BOUTONS DE-ICER (50-100) =
-  *       50: Control numérique ou physique 
+  *       50: Control numÃ©rique ou physique 
   *       55: Control mode manuel ou automatique 
   *       60-90: Switchs
   */
@@ -51,7 +51,7 @@ void setInitialData()
   
   //INITIALISATION BOUTONS COULEURS
   buttonGreen.setId(0); // ID de bouton UNIQUE a chacun 
-  buttonGreen.setType(BUTTON_IN); // Définition du type du bouton comme objet
+  buttonGreen.setType(BUTTON_IN); // DÃ©finition du type du bouton comme objet
   buttonGreen.setLocation(2,0,HALF);  // Definition de la position du bouton sur l'application [void setLocation(int row, int order, int span)]
   buttonGreen.setTitle("Green Color"); // Titre du bouton
   buttonGreen.setColor(GREEN); 
