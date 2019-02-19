@@ -1,5 +1,5 @@
 
-// On dit sur quels pin sont les entrées et sorties :
+// On dit sur quels pin sont les entrÃ©es et sorties :
 const int buttonPin1 = A4; //Bouton "A"
 const int buttonPin2 = A3; //Bouton "B"
 const int buttonPin3 = A2; //Bouton "C"
@@ -7,9 +7,9 @@ const int buttonPin4 = A1; //Bouton "D"
 const int buttonPin5 = A0; //Bouton "E"
 const int buttonSw1 = 3; //Mode Light Icing
 const int buttonSw2 = 2; //Mode Heavy Icing
-const int buttonSw3 = 10; //Mode Dégradé 1
-const int buttonSw4 = 11; //Mode Dégradé 2
-const int buttonSw5 = 12; //Mode Dégradé 3
+const int buttonSw3 = 10; //Mode DÃ©gradÃ© 1
+const int buttonSw4 = 11; //Mode DÃ©gradÃ© 2
+const int buttonSw5 = 12; //Mode DÃ©gradÃ© 3
 const int ledPin0 =  4; //Relais "Lampe de fonctionnement"
 const int ledPin1 =  5; //Relais "A"
 const int ledPin2 =  6; //Relais "B"
@@ -17,7 +17,7 @@ const int ledPin3 =  7; //Relais "C"
 const int ledPin4 =  8; //Relais "D"
 const int ledPin5 =  9; //Relais "E"
 
-// Déclaration des variables utilisées par le programme :
+// DÃ©claration des variables utilisÃ©es par le programme :
 int buttonState1 = 0;
 int buttonState2 = 0;
 int buttonState3 = 0;
@@ -39,7 +39,7 @@ int led3 = 0;
 int led4 = 0;
 int led5 = 0;
 int timer = 0;
-// Début du programme :
+// DÃ©but du programme :
 void setup() {
   pinMode(ledPin0, OUTPUT);      
   pinMode(ledPin1, OUTPUT);
@@ -70,8 +70,8 @@ void loop(){
   switchState3 = digitalRead(buttonSw3);
   switchState4 = digitalRead(buttonSw4);
   switchState5 = digitalRead(buttonSw5);
-  if(switchState1 == LOW);{ // Démarre le programme "Light Icing"
-    if (switchState5 == LOW){ // Condition pour lancer le programme "Light Icing" avec le mode Dégradé 3
+  if(switchState1 == LOW);{ // DÃ©marre le programme "Light Icing"
+    if (switchState5 == LOW){ // Condition pour lancer le programme "Light Icing" avec le mode DÃ©gradÃ© 3
   while(led1 < 500 && switchState1 == LOW){
    digitalWrite(ledPin0, LOW);          
    digitalWrite(ledPin1, LOW);
@@ -117,8 +117,8 @@ void loop(){
    timer++;
    switchState1 = digitalRead(buttonSw1);
 }}
-    else // Suite de la condition "if (switchState5 == LOW)" pour lancer le programme "Light Icing" sans le mode Dégradé 3
-    if (switchState4 == HIGH) // Condition pour lancer le programme "Light Icing" sans le mode Dégradé 2
+    else // Suite de la condition "if (switchState5 == LOW)" pour lancer le programme "Light Icing" sans le mode DÃ©gradÃ© 3
+    if (switchState4 == HIGH) // Condition pour lancer le programme "Light Icing" sans le mode DÃ©gradÃ© 2
   while(led1 < 600 && switchState1 == LOW){
    digitalWrite(ledPin0, LOW);
    digitalWrite(ledPin1, LOW);
@@ -130,7 +130,7 @@ void loop(){
    led1++;
    switchState1 = digitalRead(buttonSw1);
 }
-    else // Suite de la condition "if (switchState4 == HIGH)" pour lancer le programme "Light Icing" avec le mode Dégradé 2
+    else // Suite de la condition "if (switchState4 == HIGH)" pour lancer le programme "Light Icing" avec le mode DÃ©gradÃ© 2
   while(led1 < 600 && switchState1 == LOW){
    digitalWrite(ledPin0, HIGH);          
    digitalWrite(ledPin1, LOW);
@@ -150,14 +150,14 @@ void loop(){
    switchState1 = digitalRead(buttonSw1);
 }
    digitalWrite(ledPin2, HIGH);
-   if (switchState3 == HIGH) // Condition pour continuer l'éxécution du programme sous le mode Dégradé 1 ( dans ce cas mode Dégradé 1 désactivé )
+   if (switchState3 == HIGH) // Condition pour continuer l'Ã©xÃ©cution du programme sous le mode DÃ©gradÃ© 1 ( dans ce cas mode DÃ©gradÃ© 1 dÃ©sactivÃ© )
   while(led3 < 600 && switchState1 == LOW){                   
    digitalWrite(ledPin3, LOW);
    delay(10);
    led3++;
    switchState1 = digitalRead(buttonSw1);
 }
-   else // Suite de la condition "if (switchState3 == HIGH)" pour continuer l'éxécution du programme sous le mode Dégradé 1 ( dans ce cas mode Dégradé 1 activé )
+   else // Suite de la condition "if (switchState3 == HIGH)" pour continuer l'Ã©xÃ©cution du programme sous le mode DÃ©gradÃ© 1 ( dans ce cas mode DÃ©gradÃ© 1 activÃ© )
   while(led3 < 600 && switchState1 == LOW){ 
    digitalWrite(ledPin3, HIGH);
    delay(10);
@@ -199,8 +199,8 @@ led4 = 0;
 led5 = 0;
 timer = 0;
 
-if(switchState2 == LOW);{ // Démarre le programme "Heavy Icing"
-    if (switchState5 == LOW){ // Condition pour lancer le programme "Heavy Icing" avec le mode Dégradé 3
+if(switchState2 == LOW);{ // DÃ©marre le programme "Heavy Icing"
+    if (switchState5 == LOW){ // Condition pour lancer le programme "Heavy Icing" avec le mode DÃ©gradÃ© 3
   while(led1 < 500 && switchState2 == LOW){
    digitalWrite(ledPin0, LOW);          
    digitalWrite(ledPin1, LOW);
@@ -246,8 +246,8 @@ if(switchState2 == LOW);{ // Démarre le programme "Heavy Icing"
    timer++;
    switchState2 = digitalRead(buttonSw2);
 }}
-    else // Suite de la condition "if (switchState5 == LOW)" pour lancer le programme "Heavy Icing" sans le mode Dégradé 3
-    if (switchState4 == HIGH) // Condition pour lancer le programme "Light Icing" sans le mode Dégradé 2
+    else // Suite de la condition "if (switchState5 == LOW)" pour lancer le programme "Heavy Icing" sans le mode DÃ©gradÃ© 3
+    if (switchState4 == HIGH) // Condition pour lancer le programme "Light Icing" sans le mode DÃ©gradÃ© 2
   while(led1 < 600 && switchState2 == LOW){
    digitalWrite(ledPin0, LOW);
    digitalWrite(ledPin1, LOW);
@@ -259,7 +259,7 @@ if(switchState2 == LOW);{ // Démarre le programme "Heavy Icing"
    led1++;
    switchState2 = digitalRead(buttonSw2);
 }
-    else // Suite de la condition "if (switchState4 == HIGH)" pour lancer le programme "Heavy Icing" avec le mode Dégradé 2
+    else // Suite de la condition "if (switchState4 == HIGH)" pour lancer le programme "Heavy Icing" avec le mode DÃ©gradÃ© 2
   while(led1 < 600 && switchState2 == LOW){
    digitalWrite(ledPin0, HIGH);          
    digitalWrite(ledPin1, LOW);
@@ -328,7 +328,7 @@ led4 = 0;
 led5 = 0;
 timer = 0;
 
-    if (switchState4 == HIGH) // Condition pour lancer le mode manuel "A" sans le mode Dégradé 2
+    if (switchState4 == HIGH) // Condition pour lancer le mode manuel "A" sans le mode DÃ©gradÃ© 2
        while (buttonState1 == LOW) {
     digitalWrite(ledPin1, LOW);
     digitalWrite(ledPin2, HIGH);
@@ -338,7 +338,7 @@ timer = 0;
     digitalWrite(ledPin0, LOW);
     buttonState1 = digitalRead(buttonPin1);
   }
-    else // Condition pour lancer le mode manuel "A" avec le mode Dégradé 2
+    else // Condition pour lancer le mode manuel "A" avec le mode DÃ©gradÃ© 2
        while (buttonState1 == LOW) {  
     digitalWrite(ledPin1, LOW);
     digitalWrite(ledPin2, HIGH);
@@ -348,7 +348,7 @@ timer = 0;
     digitalWrite(ledPin0, HIGH);
     buttonState1 = digitalRead(buttonPin1);
   }
-    if (switchState4 == HIGH) // Condition pour lancer le mode manuel "B" sans le mode Dégradé 2
+    if (switchState4 == HIGH) // Condition pour lancer le mode manuel "B" sans le mode DÃ©gradÃ© 2
        while (buttonState2 == LOW) {  
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, LOW);
@@ -358,7 +358,7 @@ timer = 0;
     digitalWrite(ledPin0, LOW);
     buttonState2 = digitalRead(buttonPin2);
   }
-    else // Condition pour lancer le mode manuel "B" avec le mode Dégradé 2
+    else // Condition pour lancer le mode manuel "B" avec le mode DÃ©gradÃ© 2
        while (buttonState2 == LOW) {  
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, LOW);
@@ -368,7 +368,7 @@ timer = 0;
     digitalWrite(ledPin0, HIGH);
     buttonState2 = digitalRead(buttonPin2);
   }
-    if (switchState3 == LOW) // Condition pour lancer le mode manuel "C" avec le mode Dégradé 1
+    if (switchState3 == LOW) // Condition pour lancer le mode manuel "C" avec le mode DÃ©gradÃ© 1
        while (buttonState3 == LOW) {  
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -378,7 +378,7 @@ timer = 0;
     digitalWrite(ledPin0, LOW);
     buttonState3 = digitalRead(buttonPin3);
   }
-    else if (switchState4 == LOW) // Condition pour lancer le mode manuel "C" avec le mode Dégradé 2
+    else if (switchState4 == LOW) // Condition pour lancer le mode manuel "C" avec le mode DÃ©gradÃ© 2
        while (buttonState3 == LOW) {  
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -388,7 +388,7 @@ timer = 0;
     digitalWrite(ledPin0, HIGH);
     buttonState3 = digitalRead(buttonPin3);
   }
-    else // Condition pour lancer le mode manuel "C" sans mode Dégradé
+    else // Condition pour lancer le mode manuel "C" sans mode DÃ©gradÃ©
        while (buttonState3 == LOW) {  
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -398,7 +398,7 @@ timer = 0;
     digitalWrite(ledPin0, LOW);
     buttonState3 = digitalRead(buttonPin3);
   }
-   if (switchState4 == HIGH) // Condition pour lancer le mode manuel "D" "Light Icing" sans le mode Dégradé 2
+   if (switchState4 == HIGH) // Condition pour lancer le mode manuel "D" "Light Icing" sans le mode DÃ©gradÃ© 2
        while (buttonState4 == LOW) { 
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -408,7 +408,7 @@ timer = 0;
     digitalWrite(ledPin0, LOW);
   buttonState4 = digitalRead(buttonPin4);
   }
-    else // Condition pour lancer le mode manuel "D" avec le mode Dégradé 2
+    else // Condition pour lancer le mode manuel "D" avec le mode DÃ©gradÃ© 2
        while (buttonState4 == LOW) { 
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -418,7 +418,7 @@ timer = 0;
     digitalWrite(ledPin0, HIGH);
   buttonState4 = digitalRead(buttonPin4);
   }
-    if (switchState4 == HIGH) // Condition pour lancer le mode manuel "E" "Light Icing" sans le mode Dégradé 2
+    if (switchState4 == HIGH) // Condition pour lancer le mode manuel "E" "Light Icing" sans le mode DÃ©gradÃ© 2
        while (buttonState5 == LOW) {   
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -428,7 +428,7 @@ timer = 0;
     digitalWrite(ledPin0, LOW);
     buttonState5 = digitalRead(buttonPin5);
   }
-    else // Condition pour lancer le mode manuel "E" avec le mode Dégradé 2
+    else // Condition pour lancer le mode manuel "E" avec le mode DÃ©gradÃ© 2
          while (buttonState5 == LOW) {   
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
@@ -438,7 +438,7 @@ timer = 0;
     digitalWrite(ledPin0, HIGH);
     buttonState5 = digitalRead(buttonPin5);
   }
-// Boucle pour laisser chaque sortie à l'état haut
+// Boucle pour laisser chaque sortie Ã  l'Ã©tat haut
     while (buttonState1 == HIGH && buttonState2 == HIGH && buttonState3 == HIGH && buttonState4 == HIGH && buttonState5 == HIGH && switchState1 == HIGH && switchState2 == HIGH) {   
     digitalWrite(ledPin1, HIGH);
     digitalWrite(ledPin2, HIGH);
